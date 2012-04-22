@@ -22,6 +22,13 @@ function picGridModel(){
 		success: function(data)
 		{
 			self.myImages(data.data);
+			var newItems = '';
+			$.each(self.myImages(), function(i, val)
+			{
+				newItems += '<li><img src="' + val.images.thumbnail.url + '"/></li>';
+			});
+			$('#pics').isotope('insert', $(newItems));
+
 			$.each(data.data, function(i, image)
 			{
 				//self.myImages().push(image);
@@ -45,8 +52,9 @@ function picGridModel(){
 }
 
 $(function() {
+	$('#pics').isotope();
 	grid = new picGridModel()
 	ko.applyBindings(grid);
 
-	$('#pics').isotope();
+	
 })
