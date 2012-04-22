@@ -1,1 +1,1 @@
-redirectUrl = 'http://picgrid.gamershive.com/wall.html';
+redirectUrl =  window.location.protocol + '//' + window.location.hostname +'/wall.html';

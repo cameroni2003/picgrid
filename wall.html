@@ -13,6 +13,7 @@
 	<ul id="friends" data-bind="foreach: uniqueFriends">
 		<li>
 			<input type="checkbox" data-bind="checked: $parent.selectedFriends, attr: { value: id }"/>
+			<img data-bind="attr: { src: profile_picture }" height="100" width="100" />
 			<span data-bind="text: full_name"></span>
 		</li>
 	</ul>
