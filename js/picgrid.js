@@ -21,6 +21,7 @@ function picGridModel(){
 			{
 				newItems += '<li class="' + val.user.id + '"><img src="' + val.images.thumbnail.url + '"/></li>';
 			});
+			
 			$('#pics').isotope('insert', $(newItems));
 
 			$.each(data.data, function(i, image)
@@ -29,6 +30,7 @@ function picGridModel(){
 				self.friends().push(image.user);
 				
 			});
+
 			var idArray = new Array();
 			self.uniqueFriends(ko.utils.arrayFilter(self.friends(), function(friend)
 			{
