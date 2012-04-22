@@ -12,7 +12,7 @@
 <body>
 	<ul id="friends" data-bind="foreach: uniqueFriends">
 		<li>
-			<input type="checkbox" checked="checked"/>
+			<input type="checkbox" data-bind="checked: $parent.selectedFriends, attr: { value: id }"/>
 			<span data-bind="text: full_name"></span>
 		</li>
 	</ul>

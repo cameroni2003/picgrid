@@ -7,12 +7,6 @@ function picGridModel(){
 	self.uniqueFriends = ko.observableArray([]);
 	self.selectedFriends = ko.observableArray([]);
 
-	ko.bindingHandlers.friendCheckbox = {
-		update: function(el, val)
-		{
-
-		}
-	}
 
 	$.ajax({
 		url: 'https://api.instagram.com/v1/users/self/feed',
@@ -25,7 +19,7 @@ function picGridModel(){
 			var newItems = '';
 			$.each(self.myImages(), function(i, val)
 			{
-				newItems += '<li><img src="' + val.images.thumbnail.url + '"/></li>';
+				newItems += '<li class="' + val.user.id + '"><img src="' + val.images.thumbnail.url + '"/></li>';
 			});
 			$('#pics').isotope('insert', $(newItems));
 
@@ -46,7 +40,7 @@ function picGridModel(){
 				return false;
 			}));
 
-			self.selectedFriends(self.uniqueFriends());
+			self.selectedFriends(self.uniqueFriends().map(function(friend)  { return friend.id}));
 		}
 	})
 }
@@ -56,5 +50,11 @@ $(function() {
 	grid = new picGridModel()
 	ko.applyBindings(grid);
 
+	$('input').live('change', function(e){
+		var filterIds = grid.selectedFriends().map(function(friend) {
+			return '.' + friend;
+		});
+		$('#pics').isotope({ filter: filterIds.join(',') });
+	});
 	
 })
