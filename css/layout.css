@@ -4,6 +4,10 @@
 }
 
 #pictures{
-	width: 100%;
+	width: 800px;
 	float: left;
+}
+
+ul{
+	list-style: none;
 }

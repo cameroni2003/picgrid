@@ -2,6 +2,8 @@
 
 .isotope-item {
   z-index: 2;
+  height:150px;
+  width:150px;
 }
 
 .isotope-hidden.isotope-item {
@@ -20,10 +22,6 @@
           transition-duration: 0.8s;
 }
 
-#pictures {
-  height:800px;
-  width:800px;
-}
 .isotope {
   -webkit-transition-property: height, width;
      -moz-transition-property: height, width;
