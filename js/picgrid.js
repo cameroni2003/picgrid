@@ -15,7 +15,9 @@ function picGridModel(){
 	}
 
 	$.ajax({
-		url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + self.accessToken,
+		url: 'https://api.instagram.com/v1/users/self/feed',
+		type: 'GET',
+		data: { access_token: self.accessToken, count: 50 },
 		dataType: 'jsonp',
 		success: function(data)
 		{
@@ -45,4 +47,6 @@ function picGridModel(){
 $(function() {
 	grid = new picGridModel()
 	ko.applyBindings(grid);
+
+	$('#pics').isotope();
 })
