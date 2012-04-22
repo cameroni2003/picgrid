@@ -40,7 +40,7 @@ function picGridModel(){
 				return false;
 			}));
 
-			self.selectedFriends(self.uniqueFriends().map(function(friend)  { return friend.id}));
+			//self.selectedFriends(self.uniqueFriends().map(function(friend)  { return friend.id}));
 		}
 	})
 }
@@ -50,7 +50,7 @@ $(function() {
 	grid = new picGridModel()
 	ko.applyBindings(grid);
 
-	$('input').live('change', function(e){
+	$('input').live('click', function(e){
 		var filterIds = grid.selectedFriends().map(function(friend) {
 			return '.' + friend;
 		});
