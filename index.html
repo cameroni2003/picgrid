@@ -1,0 +1,22 @@
+<html>
+<head>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		function login()
+		{
+			var clientId = 'cd5f9e92975d423eaffd625d3f095c77';
+			window.parent.location = 'https://instagram.com/oauth/authorize/?client_id=' + clientId + '&redirect_uri=http://localhost/wall.html&response_type=token';
+		}
+	</script>
+
+
+</head>
+<body>
+	<h1>
+		test worked</h1>
+	<p>
+		<a href="#" onclick="login()">login</a></p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cloud.github.com/downloads/SteveSanderson/knockout/knockout-2.1.0rc.js"></script>
+
+	<script type="text/javascript" src="/js/picgrid.js"></script>
+
+</head>
+<body>
+	<ul id="friends" data-bind="foreach: uniqueFriends">
+		<li>
+			<input type="checkbox" checked="checked"/>
+			<span data-bind="text: full_name"></span>
+		</li>
+	</ul>
+	
+	<ul id="pics" data-bind="foreach: myImages">
+		<li><img data-bind="attr: { src: images.thumbnail.url }"></li>
+	</ul>
+</body>
+</html>
