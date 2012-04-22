@@ -1,7 +1,7 @@
 function picGridModel(){
 	var self = this;
 
-	self.accessToken = '36177776.cd5f9e9.c050b7c08f1e40309ba93039e48f52fb';
+	self.accessToken = window.location.hash.replace('#access_token=', '');
 	self.myImages = ko.observableArray([]);
 	self.friends = ko.observableArray([]);
 	self.uniqueFriends = ko.observableArray([]);
