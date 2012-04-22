@@ -1,0 +1,1 @@
+redirectUrl = 'http://picgrid.gamershive.com/wall.html';
