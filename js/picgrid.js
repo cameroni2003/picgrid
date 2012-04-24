@@ -8,6 +8,7 @@ function picGridModel(){
 	self.selectedFriends = ko.observableArray([]);
 
 
+
 	$.ajax({
 		url: 'https://api.instagram.com/v1/users/self/feed',
 		type: 'GET',
@@ -19,7 +20,11 @@ function picGridModel(){
 			var newItems = '';
 			$.each(self.myImages(), function(i, val)
 			{
-				newItems += '<li class="' + val.user.id + '"><img src="' + val.images.thumbnail.url + '"/></li>';
+				var caption = '';
+				if(val.caption != null)
+					caption = val.user.full_name + ': ' + val.caption.text;
+
+				newItems += '<li class="' + val.user.id + '"><a title="' + caption + '" href="' + val.images.standard_resolution.url + '"><img src="' + val.images.thumbnail.url + '"/></a></li>';
 			});
 			
 			$('#pics').isotope('insert', $(newItems));
@@ -58,5 +63,7 @@ $(function() {
 		});
 		$('#pics').isotope({ filter: filterIds.join(',') });
 	});
+
+	
 	
 })

@@ -1,13 +1,22 @@
+body {
+	background-color:#000;
+}
 #friends{
 	width: 200px;
 	float:left;
 }
 
 #pictures{
-	width: 800px;
+	width: 1000px;
 	float: left;
 }
 
 ul{
 	list-style: none;
+}
+
+#pics li.active
+{
+	height:612px;
+	width:612px;
 }

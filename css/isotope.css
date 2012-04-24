@@ -4,6 +4,8 @@
   z-index: 2;
   height:150px;
   width:150px;
+  margin-left:5px;
+  margin-bottom:5px;
 }
 
 .isotope-hidden.isotope-item {
