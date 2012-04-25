@@ -7,6 +7,13 @@ function picGridModel(){
 	self.uniqueFriends = ko.observableArray([]);
 	self.selectedFriends = ko.observableArray([]);
 
+	self.selectedFriends.subscribe(function(e){
+		var filterIds = self.selectedFriends().map(function(friend) {
+			return '.' + friend;
+		});
+		$('#pics').isotope({ filter: filterIds.join(',') });
+	});
+
 
 
 	$.ajax({
@@ -64,6 +71,25 @@ $(function() {
 		$('#pics').isotope({ filter: filterIds.join(',') });
 	});
 
-	
+	$('#friends li').live('click', function(e){
+		
+
+		var checkbox = $(this).find('input');
+		var isChecked = checkbox.prop('checked');
+		checkboxData = ko.dataFor(checkbox[0]);
+		if(isChecked)
+		{
+			ko.contextFor(checkbox[0]).$parent.selectedFriends.remove(checkboxData.id);
+			
+		}
+		else
+		{
+			var newArray = grid.selectedFriends();
+			newArray.push(checkboxData.id);
+			grid.selectedFriends(newArray);
+			checkbox.prop('checked', true);
+		}
+
+	});
 	
 })
