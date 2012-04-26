@@ -1,5 +1,5 @@
 body {
-	background-color:#222;
+	background-color:#555;
 	color:#fff;
 }
 #friends{
@@ -8,16 +8,29 @@ body {
 }
 
 #pictures{
-	width: 1000px;
-	float: left;
+	width: 100%;
 }
 
 ul{
 	list-style: none;
 }
 
-#pics li.active
+#friends li.highlight
 {
-	height:612px;
-	width:612px;
+	background-color: #ddd; 
+	color:#000;
+}
+
+#friends li {
+	background-color: #000;
+	vertical-align: middle; 
+	padding: 8px; 
+	border-radius: 5px; 
+	margin-top: 5px;
+	color:#fff;
+	cursor: pointer;
+}
+
+#friends input{
+	display: none;
 }

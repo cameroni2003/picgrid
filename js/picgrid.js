@@ -35,7 +35,7 @@ function picGridModel(){
 			});
 			
 			$('#pics').isotope('insert', $(newItems));
-
+			
 			$.each(data.data, function(i, image)
 			{
 				//self.myImages().push(image);
@@ -53,17 +53,20 @@ function picGridModel(){
 				}
 				return false;
 			}));
-
+			$('#pics').isotope('reLayout')
 			//self.selectedFriends(self.uniqueFriends().map(function(friend)  { return friend.id}));
 		}
 	})
 }
 
 $(function() {
-	$('#pics').isotope();
+	$('#pics').isotope({
+		resizeable: true
+	});
 	grid = new picGridModel()
 	ko.applyBindings(grid);
 
+	
 	$('input').live('click', function(e){
 		var filterIds = grid.selectedFriends().map(function(friend) {
 			return '.' + friend;
@@ -79,11 +82,18 @@ $(function() {
 		checkboxData = ko.dataFor(checkbox[0]);
 		if(isChecked)
 		{
+			//debugger
+			$(this).removeClass('highlight');
+
 			ko.contextFor(checkbox[0]).$parent.selectedFriends.remove(checkboxData.id);
 			
 		}
 		else
 		{
+						//debugger;
+
+			$(this).addClass('highlight');
+
 			var newArray = grid.selectedFriends();
 			newArray.push(checkboxData.id);
 			grid.selectedFriends(newArray);
