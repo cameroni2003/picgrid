@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"background-repeat"
+			],
+			[
 				"check",
 				"checkboxData"
 			],
@@ -59,7 +63,7 @@
 			"file": "js/picgrid.js",
 			"settings":
 			{
-				"buffer_size": 2343,
+				"buffer_size": 2537,
 				"line_ending": "Windows"
 			}
 		},
@@ -67,7 +71,7 @@
 			"file": "css/layout.css",
 			"settings":
 			{
-				"buffer_size": 205,
+				"buffer_size": 441,
 				"line_ending": "Windows"
 			}
 		},
@@ -190,15 +194,15 @@
 					"file": "js/picgrid.js",
 					"settings":
 					{
-						"buffer_size": 2343,
+						"buffer_size": 2537,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2137,
-								2137
+								913,
+								913
 							]
 						],
 						"settings":
@@ -207,7 +211,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1140.0,
+						"translation.y": 351.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -217,23 +221,24 @@
 					"file": "css/layout.css",
 					"settings":
 					{
-						"buffer_size": 205,
+						"buffer_size": 441,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								42,
-								42
+								234,
+								234
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 360.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -261,7 +266,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 680.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -30,6 +30,7 @@ function picGridModel(){
 				var caption = val.user.full_name;
 				if(val.caption != null)
 					caption += ': ' + val.caption.text;
+				caption += "<br/>blah"
 
 				newItems += '<li class="' + val.user.id + '"><a title="' + caption + '" href="' + val.images.standard_resolution.url + '"><img src="' + val.images.thumbnail.url + '"/></a></li>';
 			});

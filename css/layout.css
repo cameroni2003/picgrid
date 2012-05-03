@@ -1,6 +1,9 @@
 body {
 	background-color:#555;
 	color:#fff;
+
+	background-image:url('/img/irongrip.png');
+
 }
 #friends{
 	width: 200px;
@@ -17,12 +20,12 @@ ul{
 
 #friends li.highlight
 {
-	background-color: #ddd; 
+	background-color: #888; 
 	color:#000;
 }
 
 #friends li {
-	background-color: #000;
+	background-color: #222;
 	vertical-align: middle; 
 	padding: 8px; 
 	border-radius: 5px; 
