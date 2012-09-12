@@ -32,7 +32,9 @@ function picGridModel(){
 					caption += ': ' + val.caption.text;
 				caption += "<br/>blah"
 
-				newItems += '<li class="' + val.user.id + '"><a title="' + caption + '" href="' + val.images.standard_resolution.url + '"><img src="' + val.images.thumbnail.url + '"/></a></li>';
+				newItems += '<li class="' + val.user.id + '"><a title="' + caption + '" href="' + val.images.standard_resolution.url + '"> \
+							<img src="' + val.images.thumbnail.url + '"/><span class="icon-heart"></span><span class="icon-comments"></span> \
+							<span class="comment-count">99+</span><span class="overlay"></span></a></li>';
 			});
 			
 			$('#pics').isotope('insert', $(newItems));
